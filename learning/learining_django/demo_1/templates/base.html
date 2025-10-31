@@ -1,0 +1,26 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{% block title %}My Learning Platform{% endblock %}</title>
+</head>
+<body>
+  <header>
+    <h1>LearnX</h1>
+    <nav>
+      <a href=" {% url 'home' %} ">Home</a>
+      {% comment %} <a href="{% url 'pro' %}">Courses</a> {% endcomment %}
+      <a href="/store/">Accessories</a>
+      <a href="/profile/">Profile</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 LearnX Inc.</p>
+  </footer>
+</body>
+</html>

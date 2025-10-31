@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>E-Commerce Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container py-4">
+        <div class=" mb-4 d-flex justify-content-between align-items-center">
+            <div class=" d-flex flex-column">
+                <h2 class="text-primary fw-bold text-center pb-0 mb-0">
+                    <a href="/index.html" class="text-decoration-none fw-bold">Brand World</a>
+                </h2>
+                <small><em> E-Commerce Store</em></small>
+            </div>
+
+            <div class=" d-flex align-items-center gap-3">
+                <a href="/products.html" class="text-decoration-none text-dark fw-bold">
+                    Products
+                </a>
+                <button class="btn btn-success" onclick="window.location.href='cart.html'">
+                    Cart (<span id="cart-count">0</span>)
+                </button>
+            </div>
+
+        </div>
+        <hr />
+
+        <!-- carousel -->
+        <div class="row carousel mb-4">
+            <div class="col-md-12">
+                <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner rounded shadow-sm">
+                        <div class="carousel-item active">
+                            <img src="/asserts/ele-1.jpg" class="d-block w-100" alt="Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/asserts/ele-2.jpg" class="d-block w-100" alt="Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/asserts/cloth_1.jpg" class="d-block w-100" alt="Image 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/asserts/cloth_2.jpg" class="d-block w-100" alt="Image 4">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/asserts/book-1.webp" class="d-block w-100" alt="Image 5">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 text-center mb-4">
+            <h3 class="">Explore Our Products</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo aliquid dolor suscipit ratione a quae
+                porro reiciendis? Tenetur consequatur dicta nesciunt quisquam sapiente nihil et, nobis laudantium illum,
+                consequuntur reprehenderit?</p>
+            <button class="btn btn-success" onclick="window.location.href='products.html'">
+                View Products
+            </button>
+        </div>
+
+
+
+
+    </div>
+    <div class="footer text-center">
+        <div class="container-fluid bg-dark text-white p-3 mt-4">
+            <div class="row">
+                <div class="col-md-12  h-100 ">
+                    this is footer <br><br>
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolorum possimus explicabo tempore <br> laborum magnam nulla saepe quos quod <br> exercitationem repellendus tenetur tempora commodi cumque, et rerum ea aliquam adipisci!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</body>
+
+</html>

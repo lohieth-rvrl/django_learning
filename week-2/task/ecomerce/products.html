@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container py-4">
+        <div class=" mb-4 d-flex justify-content-between align-items-center">
+            <div class=" d-flex flex-column">
+                <h2 class="text-primary fw-bold text-center pb-0 mb-0">
+                    <a href="/index.html" class="text-decoration-none fw-bold">Brand World</a>
+                </h2>
+                <small><em> E-Commerce Store</em></small>
+            </div>
+
+            <div class=" d-flex align-items-center gap-3">
+                <a href="/products.html" class="text-decoration-none text-dark fw-bold">
+                    Products
+                </a>
+                <button class="btn btn-success" onclick="window.location.href='cart.html'">
+                    Cart (<span id="cart-count">0</span>)
+                </button>
+            </div>
+
+        </div>
+        <hr />
+        <div class="row gy-4">
+            <div class="col-md-3">
+                <button class="btn btn-secondary mb-4" onclick="window.location.href='index.html'">Back</button>
+                <div class="border p-3 rounded shadow-sm">
+                    <label for="categoryFilter" class="form-label fw-bold">Filter by Category:</label>
+                    <select id="categoryFilter" class="form-select">
+                        <option selected="selected" value="all">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="books">Books</option>
+                        <option value="automobile">Automobile Accessories</option>
+                    </select>
+                    <br>
+                    <br>
+                    <p class="text-muted text-center text-decoration-line-through">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Voluptate nam aperiam autem dolor
+                        deleniti quod quam fugiat eligendi alias deserunt ducimus incidunt repellendus, iusto accusamus
+                        voluptatibus in suscipit culpa qui?</p>
+                </div>
+
+            </div>
+
+            <div class="col-md-9">
+                <p class="text-muted"> Search Results: 
+                    <span id="info" class="text-success"></span>
+                    <span id="error" class="text-danger"></span>
+                </p>
+                
+                
+                <div class="row" id="product_containers">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

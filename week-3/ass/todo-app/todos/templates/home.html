@@ -1,0 +1,108 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Timesheets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container py-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>Timesheets</h1>
+            <a href="{% url 'create' %}" class="btn btn-primary btn-sm">create</a>
+        </div>
+
+        <div class="table-responsive">
+            {% if messages %}
+                <ul class="messages list-unstyled">
+                    {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }} text-success "{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <table class="table table-striped table-hover align-middle border shadow-sm">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Priority</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th class="w-25">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if todos %}
+                    {% for todo in todos %}
+                    <tr>
+                        <td>{{ todo.title }}</td>
+                        <td>{{ todo.description }}</td>
+                        {% comment %} <td>{{ todo.priority }}</td> {% endcomment %}
+                        {% if todo.priority == 'Low' %}
+                            <td class="text-warning">{{ todo.priority }}</td>
+                        {% elif todo.priority == 'Medium' %}
+                            <td class="text-info">{{ todo.priority }}</td>
+                        {% else %}
+                            <td class="text-danger">{{ todo.priority }}</td>
+                        {% endif %}
+                        <td class="">{{ todo.date }}</td>
+
+                        {% if todo.status == 'Pending' %}
+                            <td class="text-warning">{{ todo.status }}</td>
+                        {% elif todo.status == 'In Progress' %}
+                            <td class="text-info">{{ todo.status }}</td>
+                        {% else %}
+                            <td class="text-success">{{ todo.status }}</td>
+                        {% endif %}
+                        <td class="text-center h-100">
+                            <a href="{% url 'edit' todo.id %}" class="btn btn-sm btn-secondary">Edit</a>   <br>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal ">delete</button>
+                            {% if todo.status != 'Completed' %}
+                                <a href="{% url 'mark_completed' todo.id %}" class="btn btn-success btn-sm">Complete</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td colspan="6" class="text-center text-muted py-4">No timesheets available.</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">delete the todo</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are sure you want to delete this todo?</p>
+      </div>
+      <hr>
+      <div class="modal-body">
+        {% for todo in todos %}
+        <form method="post" action="{% url 'delete' todo.id %}" class="d-inline">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-sm btn-primary">Yes</button>
+            <button type="submit" class="btn btn-sm btn-secondary">No</button>
+        </form>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

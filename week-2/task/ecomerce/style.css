@@ -1,0 +1,9 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.carousel-inner img {
+  height: 250px; 
+  object-fit: cover;
+  border-radius: 12px; 
+}

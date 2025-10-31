@@ -1,0 +1,22 @@
+[2025-10-08 12:43:28]: Transaction Type: deposit, Account Number: 907331, Amount: 10000.0
+[2025-10-08 12:43:28]: Transaction Type: deposit, Account Number: 907331, Amount: 10000.0
+[2025-10-08 12:46:52]: Transaction Type: deposit, Account Number: 922661, Amount: 1000.0
+[2025-10-08 12:46:52]: Transaction Type: deposit, Account Number: 922661, Amount: 1000.0
+[2025-10-08 12:47:18]: Transaction Type: deposit, Account Number: 922661, Amount: 10000.0
+[2025-10-08 12:49:38]: Transaction Type: deposit, Account Number: 409957, Amount: 10000.0
+[2025-10-08 12:49:38]: Transaction Type: deposit, Account Number: 409957, Amount: 10000.0
+[2025-10-08 12:49:50]: Transaction Type: deposit, Account Number: 409957, Amount: 10000.0
+[2025-10-08 12:50:54]: Transaction Type: Deposit, Account Number: 748902, Amount: $10,000.00.
+[2025-10-08 12:51:26]: Transaction Type: Deposit, Account Number: 748902, Amount: $10,000.00.
+[2025-10-08 13:30:11] -> type: Deposit, 
+account Number: 249265, amount: $10,000.00.
+[2025-10-08 13:30:38] -> type: Deposit, 
+account Number: 582020, amount: $10,000.00.
+[2025-10-08 13:31:59] -> type: Deposit, 
+account Number: 973648, amount: $10,000.00.
+[2025-10-08 13:35:39] -> type: Deposit, 
+account Number: 862271, amount: $100,000.00.
+[2025-10-08 13:36:22] -> type: Withdraw, 
+account Number: 862271, amount: $50,000.00.
+[2025-10-08 13:37:49] --> type: interest applied, 
+account Number: 862271, amount: $1,000.00.

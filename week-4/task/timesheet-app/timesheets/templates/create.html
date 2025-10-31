@@ -1,0 +1,63 @@
+{% extends "ui/index.html" %}
+{% load static %}
+
+{% block title %}Create Timesheet{% endblock %}
+
+{% block show %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mb-3">
+      <h2>Create the timesheet</h2>
+      <a href="{% url 'sheetshome' %}" class="btn btn-primary btn-sm">Back</a>
+    </div>
+
+    <div class="col-md-12 d-flex justify-content-center">
+      <div class="card text-center w-50 p-4">
+        <form method="post" id="timesheetForm" class="d-flex flex-column align-items-start">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-sm btn-success">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#id_module').change(function () {
+      const moduleId = $(this).val();
+      $.ajax({
+        url: '/ajax/load-tasks/',
+        data: {
+          'module': moduleId
+        },
+        success: function (data) {
+          $('#id_task').html(data);
+        }
+      });
+    });
+
+    // Ajax form submission
+    $('#timesheetForm').submit(function (e) {
+      e.preventDefault();
+      $.ajax({
+        type: 'POST',
+        url: window.location.pathname,
+        data: $(this).serialize(),
+        success: function () {
+          alert('Timesheet saved!');
+          window.location.href = "{% url 'home' %}";
+        },
+        error: function () {
+          alert('Error saving timesheet.');
+        }
+      });
+    });
+  });
+</script>
+{% endblock %}
