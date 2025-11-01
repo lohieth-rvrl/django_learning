@@ -1,0 +1,21 @@
+{% extends 'ui/index.html' %}
+{% load static %}
+
+{% block show %}
+    
+
+<h1 class="mb-4">All comments</h1>
+<ul class="list-group">
+    {% for comment in comments %}
+            <li class="list-group-item">
+                <strong>{{ comment.author }}</strong>
+                <br>
+                <small class="text-muted">Posted: {{ comment.created_at|date:"d M Y, H:i" }}</small>
+                <p>{{ comment.content }}</p>
+            </li>
+        {% empty %}
+        
+        <li class="list-group-item text-muted">No comments yet.</li>
+        {% endfor %}
+    </ul>  
+{% endblock  %}

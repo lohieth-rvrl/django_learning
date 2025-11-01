@@ -1,0 +1,13 @@
+{% extends 'ui/index.html' %}
+{% load static %}
+
+{% block show %}
+    <h1 class="mb-4">Create New Article</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+{% endblock %}
+    
